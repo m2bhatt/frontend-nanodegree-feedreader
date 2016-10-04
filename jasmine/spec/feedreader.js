@@ -116,7 +116,7 @@ $(function() {
 			// Empty out the feed container
 			$(".feed").html("");
 			// Save the feed content html to a variable
-			var oldContent = $(".feed").html();
+			var oldFeedContent = $(".feed").html();
 
 			loadFeed(0, function(){
 				expect( $(".feed").html() ).not.toBe(oldFeedContent);
