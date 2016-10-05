@@ -113,14 +113,14 @@ $(function() {
          * Remember, loadFeed() is asynchronous.
          */
 		it('actually changes the content', function(done) {
-			// Save the feed content html to a variable
-			var oldFeedContent = $(".feed").html();
-
-			loadFeed(1, function(){
-				expect( $(".feed").html() ).not.toBe(oldFeedContent);
-				done();
+			loadFeed(0, function(){
+				// Save the feed content html to a variable
+				var oldFeedContent = $(".feed").html();
+				loadFeed(1, function(){
+					expect( $(".feed").html() ).not.toBe(oldFeedContent);
+					done();
+				});
 			});
-
         });
 	});
 }());
